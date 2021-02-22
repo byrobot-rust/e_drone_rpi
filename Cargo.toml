@@ -1,7 +1,7 @@
 [package]
 name = "e_drone_rpi"
 version = "0.1.0"
-authors = ["Sanghyo Lee"]
+authors = ["Sanghyo Lee <realwolfmax@gmail.com>"]
 edition = "2018"
 license = "MIT OR Apache-2.0"
 description = "E-DRONE rust library for Raspberry PI."
