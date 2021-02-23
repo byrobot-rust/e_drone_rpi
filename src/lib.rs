@@ -1,3 +1,7 @@
+mod base;
+mod communication;
+mod protocol;
+
 #[cfg(test)]
 mod tests {
     #[test]
