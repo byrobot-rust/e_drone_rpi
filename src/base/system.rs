@@ -18,7 +18,6 @@ pub enum ModelNumber {
     Drone9DroneP2 = 0x00091002,
 }
 
-
 pub enum DeviceType {
     None = 0x00,
 
@@ -47,4 +46,3 @@ pub enum DeviceType {
     Whispering = 0xFE, // 바로 인접한 장치까지만 전달(받은 장치는 자기 자신에게 보낸 것처럼 처리하고 타 장치에 전달하지 않음)
     Broadcasting = 0xFF, // 연결된 모든 장치에 전달
 }
-
