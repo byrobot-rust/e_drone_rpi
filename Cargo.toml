@@ -1,11 +1,16 @@
 [package]
 name = "e_drone_rpi"
-version = "0.1.0"
+version = "21.3.2"
 authors = ["Sanghyo Lee <realwolfmax@gmail.com>"]
+description = "Rust library for BYROBOT Drones."
+documentation = "https://docs.rs/e_drone_rpi"
+homepage = "https://github.com/byrobot-rust/e_drone_rpi"
+repository = "https://github.com/byrobot-rust/e_drone_rpi"
 edition = "2018"
 license = "MIT OR Apache-2.0"
-description = "E-DRONE rust library for Raspberry PI."
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+rppal = "0.11.3"
+e_drone = "21.*"
