@@ -6,7 +6,7 @@ extern crate e_drone;
 
 use std::time::{Duration, Instant};
 
-use rppal::uart::{Parity, Uart};
+use rppal::uart::{Parity, Uart, Error};
 use e_drone::communication::{*};
 use e_drone::communication::receiver::{*};
 use e_drone::base::system::{*};
@@ -20,7 +20,7 @@ pub struct Drone
     pub time_receive: Instant,
     pub receiver: Receiver,
     pub buffer: [u8; 1024],
-    pub port: Result<Uart>,
+    pub port: Result<Uart, Error>,
 }
 
 
@@ -47,10 +47,13 @@ impl Drone {
         }
     }
 
-    pub fn start(&self)
+    pub fn start(&mut self)
     {
-        match self.port.set_read_mode(0, Duration::from_millis(0)) {
-            Ok(_value) => {},
+        match &mut self.port {
+            Ok(port) => { match port.set_read_mode(0, Duration::from_millis(0)) {
+                Ok(_value) => {},
+                _ => {},
+            } },
             _ => {},
         }
     }

@@ -1,11 +1,21 @@
 # e_drone_rpi
-Raspberry PI / Rust library for BYROBOT drones.
+Rust library for BYROBOT drones.
+
+- Tested
+  * Raspberry PI Compute Module 4
 
 
+<br>
+<br>
+
+
+## Example
 
 ## Cargo.toml
-> e_drone_rpi = "21.*"
-
+```toml
+e_drone_rpi = "21.*"
+e_drone = "21.*"
+```
 
 
 ## example code
@@ -18,11 +28,13 @@ use e_drone_rpi::{*};
 
 
 fn main() {
-    let mut drone: Drone = Drone::new("COM75");
+    let mut drone: Drone = Drone::new();
 
     if drone.is_connected() == false {
         return;
     }
+
+    drone.start();
 
     drone.request(DeviceType::Controller, DataType::Information);
 
@@ -30,7 +42,7 @@ fn main() {
         handler(&drone.check());
 
         if drone.get_time_passed_from_last_transfer() > 1200 {
-            break;
+            break;        
         }
     }
 }
