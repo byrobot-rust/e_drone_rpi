@@ -11,14 +11,19 @@ Rust library for BYROBOT drones.
 
 ## Example
 
-## Cargo.toml
+### Cargo.toml
 ```toml
+[dependencies]
 e_drone_rpi = "21.*"
 e_drone = "21.*"
 ```
 
 
-## example code
+<br>
+<br>
+
+
+### example code
 ```rust
 extern crate e_drone_rpi;
 
@@ -33,8 +38,6 @@ fn main() {
     if drone.is_connected() == false {
         return;
     }
-
-    drone.start();
 
     drone.request(DeviceType::Controller, DataType::Information);
 

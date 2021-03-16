@@ -26,36 +26,45 @@ pub struct Drone
 
 impl Drone {
     pub fn new() -> Drone{
-        Drone{
+        let mut drone = Drone{
             time_start: Instant::now(),
             time_transfer: Instant::now(),
             time_receive: Instant::now(),
             receiver: Receiver::new(),
             buffer: [0u8; 1024],
             port: Uart::new(57_600, Parity::None, 8, 1),
-        }
-    }
+        };
 
-    pub fn new_path(port_name: &str) -> Drone{
-        Drone{
-            time_start: Instant::now(),
-            time_transfer: Instant::now(),
-            time_receive: Instant::now(),
-            receiver: Receiver::new(),
-            buffer: [0u8; 1024],
-            port: Uart::with_path(port_name, 57_600, Parity::None, 8, 1)
-        }
-    }
-
-    pub fn start(&mut self)
-    {
-        match &mut self.port {
+        match &mut drone.port {
             Ok(port) => { match port.set_read_mode(0, Duration::from_millis(0)) {
                 Ok(_value) => {},
                 _ => {},
             } },
             _ => {},
         }
+
+        drone
+    }
+
+    pub fn new_path(port_name: &str) -> Drone{
+        let mut drone = Drone{
+            time_start: Instant::now(),
+            time_transfer: Instant::now(),
+            time_receive: Instant::now(),
+            receiver: Receiver::new(),
+            buffer: [0u8; 1024],
+            port: Uart::with_path(port_name, 57_600, Parity::None, 8, 1)
+        };
+
+        match &mut drone.port {
+            Ok(port) => { match port.set_read_mode(0, Duration::from_millis(0)) {
+                Ok(_value) => {},
+                _ => {},
+            } },
+            _ => {},
+        }
+
+        drone
     }
 
     pub fn is_connected(&mut self) -> bool
