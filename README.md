@@ -12,6 +12,7 @@ Rust library for BYROBOT drones.
 ## Example
 
 ### Cargo.toml
+
 ```toml
 [dependencies]
 e_drone_rpi = "21.*"
@@ -23,11 +24,11 @@ e_drone = "21.*"
 <br>
 
 
-### example code
+### main.rs
 ```rust
 extern crate e_drone_rpi;
 
-use e_drone::base::system::{*};
+use e_drone::system::{*};
 use e_drone::protocol::{*};
 use e_drone_rpi::{*};
 
@@ -60,4 +61,54 @@ fn handler(data: &Data) {
     }
 }
 ```
+
+
+<br>
+<br>
+
+
+
+## Examples in library
+
+<br>
+
+### Source code
+
+https://github.com/byrobot-rust/e_drone_rpi/tree/master/examples
+
+<br>
+<br>
+
+### Clone Library
+```
+git clone https://github.com/byrobot-rust/e_drone_rpi/
+```
+
+
+<br>
+<br>
+
+### Run
+```
+cargo run --example buzzer_hz
+```
+
+```
+cargo run --example buzzer_scale
+```
+
+```
+cargo run --example display_drawline
+```
+
+```
+cargo run --example request_information
+```
+
+```
+cargo run --example vibrator
+```
+
+
+
 
