@@ -10,7 +10,8 @@ use e_drone_rpi::{*};
 
 
 fn main() {
-    let mut drone: Drone = Drone::new();
+    //let mut drone: Drone = Drone::new();  // UART
+    let mut drone: Drone = Drone::new_path("/dev/ttyACM0"); // USB
 
     if drone.is_connected() == false {
         return;
