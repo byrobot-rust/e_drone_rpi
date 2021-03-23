@@ -1,8 +1,8 @@
 extern crate e_drone_rpi;
 
 use e_drone::system::{*};
-use e_drone::communication::{*};
 use e_drone::protocol::{*};
+use e_drone::communication::{*};
 use e_drone_rpi::{*};
 
 
@@ -13,7 +13,23 @@ fn main() {
         return;
     }
 
-    drone.send(&transfer::vibrator(500, 500, 2000));
+    drone.request(DeviceType::Controller, DataType::Information);
+
+    println!("#1");
+    drone.send(&transfer::vibrator(200, 200, 2000));
+    drone.sleep(2500);
+
+    println!("#2");
+    drone.send(&transfer::vibrator(100, 200, 2000));
+    drone.sleep(2500);
+
+    println!("#3");
+    drone.send(&transfer::vibrator(200, 100, 2000));
+    drone.sleep(2500);
+
+    println!("#4");
+    drone.send(&transfer::vibrator(100, 100, 2000));
+    drone.sleep(2500);
 
     loop {
         handler(&drone.check());

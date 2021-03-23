@@ -4,6 +4,11 @@ Rust library for BYROBOT drones.
 - Tested
   * Raspberry PI Compute Module 4
 
+- Support
+  * [E-Drone](http://dev.byrobot.co.kr/documents/kr/products/e_drone/)
+  * [Coding Drone](http://dev.byrobot.co.kr/documents/kr/products/coding_drone/)
+  * [Battle Drone](http://dev.byrobot.co.kr/documents/kr/products/battle_drone/)
+
 
 <br>
 <br>
@@ -90,25 +95,22 @@ git clone https://github.com/byrobot-rust/e_drone_rpi/
 
 ### Run
 ```
-cargo run --example buzzer_hz
+cargo run --example button
 ```
-
 ```
-cargo run --example buzzer_scale
+cargo run --example buzzer
 ```
-
 ```
-cargo run --example display_drawline
+cargo run --example draw
 ```
-
 ```
-cargo run --example request_information
+cargo run --example joystick
 ```
-
+```
+cargo run --example request
+```
 ```
 cargo run --example vibrator
 ```
-
-
 
 

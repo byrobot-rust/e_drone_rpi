@@ -1,11 +1,9 @@
-// An attribute to hide warnings for unused code.
-#![allow(dead_code)]
-
 extern crate rppal;
 extern crate e_drone;
 
 
 use rppal::uart::{Parity, Uart, Error};
+use std::{thread};
 use std::time::{Duration, Instant};
 
 use e_drone::communication::{*};
@@ -120,6 +118,14 @@ impl Drone {
     }
 
 
+    pub fn sleep(&self, time_sleep_ms: u64)
+    {
+        let duration_time_sleep_ms = Duration::from_millis(time_sleep_ms);
+
+        thread::sleep(duration_time_sleep_ms);
+    }
+
+
     // -- Transfer ----------------------------------------------------------------------------------
     pub fn send(&mut self, slice_data: &[u8])
     {
@@ -138,14 +144,4 @@ impl Drone {
         self.send(&transfer::request(device_type, data_type));
     }
 
-}
-
-
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
 }
