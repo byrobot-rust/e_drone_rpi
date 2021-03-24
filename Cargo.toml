@@ -1,6 +1,6 @@
 [package]
 name = "e_drone_rpi"
-version = "21.3.5"
+version = "21.3.6"
 authors = ["Sanghyo Lee <realwolfmax@gmail.com>"]
 description = "Rust library for BYROBOT Drones."
 documentation = "https://docs.rs/e_drone_rpi"
@@ -15,4 +15,3 @@ license = "MIT OR Apache-2.0"
 rppal = "0.11.3"
 e_drone = "21.*"
 chrono="0.4.*"
-
