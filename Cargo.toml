@@ -11,7 +11,13 @@ license = "MIT OR Apache-2.0"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+name = "e_drone_rpi"
+bench = false
+
+
 [dependencies]
-rppal = "0.11.3"
-e_drone = "21.*"
+rppal="0.11.3"
+e_drone="21.*"
 chrono="0.4.*"
+

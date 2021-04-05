@@ -1,13 +1,13 @@
 # e_drone_rpi
 Rust library for BYROBOT drones.
 
-- Tested
-  * Raspberry PI Compute Module 4
+* Tested
+  - Raspberry Pi OS (Raspberry PI Compute Module 4)
 
-- Support
-  * [E-Drone](http://dev.byrobot.co.kr/documents/kr/products/e_drone/)
-  * [Coding Drone](http://dev.byrobot.co.kr/documents/kr/products/coding_drone/)
-  * [Battle Drone](http://dev.byrobot.co.kr/documents/kr/products/battle_drone/)
+* Support
+  - [E-Drone](http://dev.byrobot.co.kr/documents/kr/products/e_drone/)
+  - [Coding Drone](http://dev.byrobot.co.kr/documents/kr/products/coding_drone/)
+  - [Battle Drone](http://dev.byrobot.co.kr/documents/kr/products/battle_drone/)
 
 
 <br>
@@ -17,7 +17,6 @@ Rust library for BYROBOT drones.
 ## Example
 
 ### Cargo.toml
-
 ```toml
 [dependencies]
 e_drone_rpi = "21.*"
@@ -51,7 +50,7 @@ fn main() {
         handler(&drone.check());
 
         if drone.get_time_passed_from_last_transfer() > 1200 {
-            break;        
+            break;
         }
     }
 }
@@ -81,10 +80,13 @@ fn handler(data: &Data) {
 
 https://github.com/byrobot-rust/e_drone_rpi/tree/master/examples
 
+
 <br>
 <br>
 
+
 ### Clone Library
+
 ```
 git clone https://github.com/byrobot-rust/e_drone_rpi/
 ```
@@ -92,6 +94,7 @@ git clone https://github.com/byrobot-rust/e_drone_rpi/
 
 <br>
 <br>
+
 
 ### Run
 ```

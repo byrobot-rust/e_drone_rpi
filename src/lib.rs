@@ -137,7 +137,7 @@ impl Drone {
     {
         match &mut self.port {
             Ok(port) => { match port.write(slice_data) {
-                Ok(_len) => { 
+                Ok(_len) => {
                     self.time_transfer = Instant::now();
                     return true;
                 },
